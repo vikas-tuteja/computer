@@ -1,3 +1,3 @@
 import json
-import collections, os
+import collections
 import sys
