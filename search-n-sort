@@ -1,0 +1,49 @@
+SEARCHING
+1. Sequential Search O(n) 
+    - search one by one till found, hence 'n'
+2. Binary Search O(log n)
+    - cut it into two, then compare if found in first or second half - recursively 
+    - 1 comparison = n/2 , 2 comparisons = n/4
+    - 3 conparisons = n/8, i comparisons = n/ 2^i i.e 'log n'
+3. Hashing
+    - A HASH TABLE is a collection of items which are stored in such a way as to make it easy to find them later.
+    - The mapping between an item and the slot where that item belongs in the hash table is called the HASH FUNCTION. 
+    - Given a collection of items, a hash function that maps each item into a unique slot is referred to as a perfect hash function
+
+    -----hashing techniques----
+    Remainder method, Mid-Square method (5.5.1)
+
+    ----collsion resolution----
+    open addressing -> sequentially find next open slot
+    quadractic probing -> sequentially find next i th open slot
+    Chaining -> allow one slot to hold multiple values
+4. Map Abstract Data Type
+
+
+SORTING
+1. The Bubble Sort O(n^2)
+     - each item “bubbles” up to the location where it belongs.
+2. The Selection Sort O(n^2)
+    - it improves on the bubble sort by making only one exchange for every pass through the list. A selection sort looks for the largest value as it 
+        makes a pass and, after completing the pass, places it in the proper location.
+3. The Insertion Sort O(n^2)
+    - it always maintains a sorted sublist in the lower positions of the list. Each new item is then “inserted” back into the previous sublist such 
+        that the sorted sublist is one item larger.
+4. The Shell Sort (diminishing increment sort) between O(n) and O(n^2)
+    - improves on the insertion sort by breaking the original list into a number of smaller sublists, each of which is sorted using an insertion sort
+5. The Merge Sort (n log n)
+    - it is the process of taking two smaller sorted lists and combining them together into a single, sorted, new list
+    - uses recusrion (base case: the list contains zero or one item)
+    - storage is an issue
+6. The Quick Sort (n log n) - worst case O(n^2)
+    - uses divide and conquer to gain the same advantages as the merge sort, place pivot value(1st elem) at its place, all at its left less than pivot          value and all at its right greater than pivot value
+    - pivot value : median of three (1st, middle & last val)
+
+BINARY SEARCH TREES
+            6
+         4     10
+       1   5 9    20
+
+    - insert log n
+    - values less than root goes to left, greater than root to right
+    - no of nodes in a perfectly balanced tree - 2^(h+1) -1 (h->height) - perfermonce log n

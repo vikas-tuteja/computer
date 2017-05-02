@@ -1,0 +1,125 @@
+**************************************************
+************** BUILT IN DATATYPES ****************
+**************************************************
+
+LIST : A list is an ordered collection of zero or more references to Python data objects. Lists are written as comma-delimited values enclosed in square brackets. The empty list is simply [ ]. Lists are heterogeneous, meaning that the data objects need not all be from the same class 
+
+OPERATIONS - [0], +, [1:2], in, len, *
+
+METHODS - append, insert, pop, sort, reverse, index, count, remove
+
+------------------------------------------------------------------------------
+
+STRINGS : are sequential collections of zero or more letters, numbers and other symbols. We call these letters, numbers and other symbols characters. Literal string values are differentiated from identifiers by using quotation marks (either single or double).
+
+OPERATOR - %(format operator), 
+METHODS - upper, find, split, center
+
+------------------------------------------------------------------------------
+
+TUPLES : are very similar to lists in that they are heterogeneous sequences of data. The difference is that a tuple is immutable, like a string. A tuple cannot be changed
+
+------------------------------------------------------------------------------
+
+SET : A set is an unordered collection of zero or more immutable Python data objects. Sets do not allow duplicates and are written as comma-delimited values enclosed in curly braces. The empty set is represented by set(). Sets are heterogeneous
+
+OPERATIONS - in, len, |, &, -, <=
+
+METHOD - union, intersection, difference, issubset, add, remove, pop
+
+------------------------------------------------------------------------------
+
+DICTIONARIES : are collections of associated pairs of items where each pair consists of a key and a value.
+OPERATIONS - in, len, del, x['a']
+METHOD - keys, values, items, get 
+
+------------------------------------------------------------------------------
+
+
+******************************************************
+**************** LINEAR STRUCTURES *******************
+******************************************************
+
+STACKS (LIFO) - last in first out  - push, pop, seek, isEmpty
+HELPS IN SOLVING PROBLEMS LIKE -
+paranthesis problems
+decimal to binary / octal / hexadecimal, etc (section 3.8)
+
+
+Infix Expression | Prefix Expression | Postfix Expression
+           A + B |             + A B |              A B +
+       A + B * C |         + A * B C |          A B C * +
+
+its implementatioj is PENDING (3.9)
+
+------------------------------------------------------------------------------
+
+QUEUE (FIFO) - first in first out
+
+------------------------------------------------------------------------------
+
+DEQUE - properties of both stack and queue
+palidrome problem
+
+------------------------------------------------------------------------------
+
+LINKED LIST
+ORDERED & UNORDERED
+
+******************************************************
+*********** CONTROL STRUCTURES *************
+******************************************************
+
+while,
+for,
+if else,
+list_comprehension
+
+******************************************************
+**************** COMMON STRUCTURES *******************
+******************************************************
+Trees
+    - the difference between a tree in nature and a tree in computer science is that a tree data structure has its root at the top and its leaves on 
+        the bottom
+    Properties: 
+        - hierarchy
+        - all nodes are independent of other nodes
+        - each leaf node is unique( i.e its path from root )
+        - can movie an entire sub-tree to another location - w/o affecting its lower levels
+    Example: our linux file system /home /tmp , etc
+             html tags <html>
+                        <body>
+                         <table>, etc
+    Vocabularies:
+        - Node, Edge, Root, Path, Children, Parent, Sibling, SubTree, LeafNode, Level, Height
+
+------------------------------------------------------------------------------
+
+BINARY TREE
+    - if each node in the tree has a MAXIMUM of two children, we say that the tree is a binary tree.
+
+List of lists approach
+def BinaryTree(r):
+    return [r, [], []]
+
+
+Nodes & References 
+    using recursion
+
+COMPLETE BINATRY TREE
+    - if each node in the tree has a EXACTLY of two children, we say that the tree is a binary tree.
+    
+TREE TAVERSALS
+preorder - root, then left, then right
+inorder - left subtree, then root, then right subtree
+postorder - left subtree, then right subtree, then root
+
+------------------------------------------------------------------------------
+
+PRIORITY QUEUE
+    - same like queues, but each element with priority
+    - will implement this using BINARY HEAP
+    - complete binary tree, means every node is present at a level, can implement using list (no need for list of lists or nodes & references)
+    - root = n/2, left = 2p, right = 2p+1
+    - in a heap -> parent key is lesser than child 
+

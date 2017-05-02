@@ -1,0 +1,224 @@
+### PYTHON INTERVIEW QUESTIONS ###
+
+1. python data structures
+2. indexing, slicing a=[1,2,3,4] what will a[10:] give and a few more example
+3. difference between list and tuple and set
+4. search 
+5. difference between lambda and function
+6. / and // in py2(from __future__ import division) == py3 
+   / py 3 and above import in py2 -> proper division (5/2 = 2.5)
+   // means (5//2 = 2)
+7. generators and iterators (xrange)
+8. filter and map function
+9. split and join
+10. regex
+11. decorator 
+12. django
+13. multithreading
+
+################################################
+
+def extendList(val, list=[]):
+    list.append(val)
+    return list
+    
+extendList(1,[]) #only1
+extendList(2) #only2
+extendList(2) #2,2
+
+################################################
+
+swap two variables in python without using a temp variable
+a,b = b,a
+
+################################################
+
+class P(obj): x = 1
+class C1(Parent): pass
+class C2(Parent): pass
+
+print P.x, C1.x, C2.x - 111
+C1.x = 2
+print P.x, C1.x, C2.x - 121
+P.x = 3
+print P.x, C1.x, C2.x - 323
+
+################################################
+
+a=b=[]
+
+__str__ returns bytes
+__unicode__ returns characters 
+
+__new__ creates an instance
+__init__ when we initialize the instance
+__call__ when we call the already initialised instance
+
+#=================== COPY ===========================
+d = c
+
+print id(c) == id(d)          # True - d is the same object as c
+print id(c[0]) == id(d[0])    # True - d[0] is the same object as c[0]
+
+shallow copy:
+d = copy.copy(c)
+print id(c) == id(d)          # False - d is now a new object
+print id(c[0]) == id(d[0])    # True - d[0] is the same object as c[0]
+
+deep copy:
+d = copy.deepcopy(c)
+print id(c) == id(d)          # False - d is now a new object
+print id(c[0]) == id(d[0])    # False - d[0] is now a new object
+
+#=========================================================
+partial functions from functools
+class partial : which can be used to “wrap” a callable object with default arguments. 
+The resulting object is itself callable, and can be treated as though it is the original function. 
+It takes all of the same arguments as the original, and can be invoked with extra positional or named arguments as well.
+
+wraps from functools
+else it will be difficult to debug
+    - maintains __name__ and __doc__ properties
+
+
+rebase - first pulls the latest base from remote server, then apply local commits
+merge - merges at the upper level - tracking is difficult
+
+InnoDB                  |   MyIsam
+row-level locking       |   table level lock
+better crash recovery   |   -
+InnoDb implement transactions, FK and relationship constraints
+
+
+--------------------------------------------------------------------------------------------------
+
+POST - To create document or any other resource
+PUT - To update the created document or any other resource.
+
+1) GET:- Used when the client is requesting a resource on the Web server.
+2) HEAD:- Used when the client is requesting some information about a resource but not requesting the resource itself.
+3) POST:- Used when the client is sending information or data to the server—for example, filling out an online form (i.e. Sends a large amount of complex data to the Web Server).
+4) PUT:- Used when the client is sending a replacement document or uploading a new document to the Web server under the request URL.
+5) DELETE:- Used when the client is trying to delete a document from the Web server, identified by the request URL.
+6) TRACE:- Used when the client is asking the available proxies or intermediate servers changing the request to announce themselves.
+7) OPTIONS:- Used when the client wants to determine other available methods to retrieve or process a document on the Web server.
+8) CONNECT:- Used when the client wants to establish a transparent connection to a remote host, usually to facilitate SSL-encrypted communication (HTTPS) through an HTTP proxy.
+
+--------------------------------------------------------------------------------------------------
+HASH MAP - is a data strucure used to implement an associative array, hash fn is used to compute an index into an array of buckets or slots
+hash means the unique index
+A dictionary is a data structure that maps keys to values.
+A hash table is a data structure that maps keys to values by taking the hash value of the key (by applying some hash function to it) and mapping that to a bucket where one or more values is stored.
+Hash tables are important data structures; Python uses them to implement two important built-in data types, dict and set.
+
+So, even in Python, you can't consider "hash table" to be a synonym for "dictionary"... since a similar data structure is also used to implement "sets"!-)
+
+--------------------------------------------------------------------------------------------------
+
+SETS are mutable and hence unhashable and hence cannot become dictionary keys
+
+TUPLES are immutable lists
+FROZENSETS are immutable sets
+
+--------------------------------------------------------------------------------------------------
+REDIS
+offers clustering (inbuilt)
+Memcached is a volatile in-memory key/value store. Redis can act like one (and do that job as well as memcached), but it is a data structure server.
+Redis is a data store, mem-cache is just a in-memory cache
+Powerful data types :- They allow redis to provide a fantastic shared queue (lists), a great messaging solution (pub/sub), a good place for storing sessions (hashes), and a compelling place for high score tracking (sorted sets). These are just a few examples that scratch the surface
+
+Memcached is good at being a simple key/value store and is good at doing key => STRING. This makes it really good for session storage.
+Redis is good at doing key => SOME_OBJECT.
+
+
+Storage type:
+Memcached stores variables in it’s memory. It retrieve any information directly from the servers memory instead of hitting the database again. On the other hand, Redis is like a database that resides in memory. It executes (read and write) a key/value pair from its database to return the resultset and all data resides in memory.Developers are using Redis also for real-time metrics, analytics.
+
+Read/Write Speed:
+Memcached is very good to handle high traffic websites. It can read lots of information at a time and give you back at a great response time. Redis can also handle high traffic on read but also can handle heavy writes as well.
+
+Data Structure:
+Memcached uses string and integer as data structure. Everything you save can be either one or the other. With integer, the only data manipulation you can do is adding or subtracting them. If you need to save arrays or objects, you will have to serialize them first and then save them. To read them back, you will need to un-serialize.
+In comparison Redis has a stronger data structures. It can handle not only strings, integer but also binary-safe strings, lists of binary-safe strings, sets of binary-safe strings and sorted sets.
+
+--------------------------------------------------------------------------------------------------
+MULTIPLE INHERITANCE
+  Am
+Bm  Cm
+  D
+
+D(B,C)
+D().m will inherit m from B - left to right
+  Am
+B   Cm
+  D
+
+D().m will inherit m from A - depth first
+this is old style class:            type(instance) = instance
+class A(object): new style class    type(instance) = class 
+
+Encapsulation
+x.public
+x._protected
+x._Encapsulation__private
+
+Polymorphism
+1 + 1 = 2
+(1,) + (2,) = (1,2,)
+
+USE
+reviewboard, autopep8, redmine
+
+package
+    - module 1
+    - module 2
+    - __init__.py
+
+python - compiled(pyc) + interpreted language
+    it iterprets the compiled codes(bytecodes)
+
+everything is an object - 
+    - 1 or more variable can reference the same object
+    - every object holds unique id
+    - when not used it is destroyed automatically
+
+-----------------------------------------------------------------------
+@property
+property - built-in function
+fget, fset, fdel
+
+temp = property(get_temp, set_temp, del_temp)
+--OR--
+temp = property()
+temp = temp.getter(get_temp)
+temp = temp.setter(set_temp)
+-----------------------------------------------------------------------
+
+10 external modules
+django
+toolbar
+pdfkit
+line-profiler
+autopep8
+mysql-python
+py-solr
+pymongo
+simplejson
+drf
+excel reader
+ckeditor
+
+
+#TODO
+decorators,
+accessors,
+mutators,
+rebase-pull difference
+class method
+old style & new style classes
+__init & new__ difference
+mro
+git practise
+understanding middleware working
+master slave of sql
+top linux commands

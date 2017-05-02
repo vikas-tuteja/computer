@@ -1,0 +1,31 @@
+type ( name of the class,
+    tuple pf the inherited classes,
+    dictionary of the attributes and values )
+
+
+MyClass  = type('MyClass', (), {'sexy':True})
+-- is same as --
+class MyClass(object):
+    sexy=True
+
+
+EXAMPLE
+d={'name':'vikas', 'age':'29', 'sex':'M'}
+info = type('info', (), d)
+>>> info
+<class '__main__.info'>
+>>> info()
+<__main__.info object at 0x7fda531020d0>
+>>> info().name
+'vikas'
+
+------------------------------------------------
+age=35                      name='bob'
+age.__class__               name.__class__
+<type 'int'>                <type = 'str'>
+
+NOW,
+age.__class__.__class__     name.__class__.__class__
+<type 'class'>              <type 'class'>
+------------------------------------------------
+
