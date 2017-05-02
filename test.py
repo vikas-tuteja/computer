@@ -1,3 +1,3 @@
 import json
-import collections
+import collections, itertools
 import sys
