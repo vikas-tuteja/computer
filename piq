@@ -226,7 +226,7 @@ top linux commands
 
 
 ---------------git-------------
-merge - all commits sequentially, then -> Merge branch 'T1' into develop
+merge - all commits sequentially, then a new merge head-> Merge branch 'T1' into develop
 
 
 
